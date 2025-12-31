@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>OnlineMenu</class>
+ <widget class="QWidget" name="OnlineMenu">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>500</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>联机对战</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background:transparent;</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>30</number>
+   </property>
+   <property name="leftMargin">
+    <number>40</number>
+   </property>
+   <property name="topMargin">
+    <number>60</number>
+   </property>
+   <property name="rightMargin">
+    <number>40</number>
+   </property>
+   <property name="bottomMargin">
+    <number>60</number>
+   </property>
+
+   <!-- 标题 -->
+   <item>
+    <widget class="QLabel" name="labelTitle">
+     <property name="styleSheet">
+      <string notr="true">color:#ff9de0;font:700 28pt 'Microsoft YaHei';</string>
+     </property>
+     <property name="text">
+      <string>联机对战</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+
+   <!-- 状态显示 -->
+   <item>
+    <widget class="QLabel" name="labelStatus">
+     <property name="styleSheet">
+      <string notr="true">color:#aaa;font:16pt 'Microsoft YaHei';</string>
+     </property>
+     <property name="text">
+      <string>等待开始匹配...</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+
+   <!-- 匹配时长 -->
+   <item>
+    <widget class="QLabel" name="labelTime">
+     <property name="styleSheet">
+      <string notr="true">color:#ff9de0;font:bold 24pt 'Microsoft YaHei';</string>
+     </property>
+     <property name="text">
+      <string>00:00</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+
+   <!-- 匹配按钮 -->
+   <item>
+    <widget class="QPushButton" name="btnStartMatch">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>50</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+QPushButton{
+    color:#fff;
+    font:bold 16pt 'Microsoft YaHei';
+    border:none;
+    border-radius:12px;
+    background:qlineargradient(x1:0,y1:0,x2:1,y2:0, stop:0 #4caf50, stop:1 #66bb6a);
+}
+QPushButton:hover{
+    background:qlineargradient(x1:0,y1:0,x2:1,y2:0, stop:0 #66bb6a, stop:1 #81c784);
+}
+QPushButton:pressed{
+    background:qlineargradient(x1:0,y1:0,x2:1,y2:0, stop:0 #388e3c, stop:1 #4caf50);
+}
+      </string>
+     </property>
+     <property name="text">
+      <string>开始匹配</string>
+     </property>
+    </widget>
+   </item>
+
+   <!-- 取消匹配按钮 -->
+   <item>
+    <widget class="QPushButton" name="btnCancelMatch">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>50</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+QPushButton{
+    color:#fff;
+    font:bold 16pt 'Microsoft YaHei';
+    border:2px solid #ff5555;
+    border-radius:12px;
+    background:rgba(255,85,85,40);
+}
+QPushButton:hover{
+    background:rgba(255,85,85,60);
+    border-color:#ff4444;
+}
+QPushButton:pressed{
+    background:rgba(255,85,85,80);
+}
+      </string>
+     </property>
+     <property name="text">
+      <string>取消匹配</string>
+     </property>
+     <property name="visible">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+
+   <!-- 匹配规则说明 -->
+   <item>
+    <widget class="QLabel" name="labelHint">
+     <property name="styleSheet">
+      <string notr="true">color:#777;font:11pt 'Microsoft YaHei';</string>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
+&lt;p align=&quot;center&quot;&gt;• 闪电模式 • 3分钟对战 • 实时显示对手棋盘&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;• 初始棋盘相同 • 随机掉落独立 • 分数高者获胜&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

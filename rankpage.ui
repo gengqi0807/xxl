@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RankPage</class>
+ <widget class="QWidget" name="RankPage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>排行榜</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="titleLabel">
+     <property name="styleSheet">
+      <string notr="true">font: 700 28pt 'Microsoft YaHei'; color: #ff9de0; background: transparent;
+</string>
+     </property>
+     <property name="text">
+      <string>游戏排行榜</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="styleSheet">
+      <string notr="true">QTabWidget::pane {
+    border: 1px solid #444444;
+    background-color: #111111;
+    border-radius: 4px;
+}
+QTabBar::tab {
+    background-color: #222222;
+    color: #ffffff;
+    padding: 8px 20px;
+    margin-right: 2px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+QTabBar::tab:selected {
+    background-color: #333333;
+    border-bottom: 2px solid #ff9de0;
+}
+QTabBar::tab:hover {
+    background-color: #2a2a2a;
+}</string>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="mode1Tab">
+      <attribute name="title">
+       <string>闪电模式</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QTableWidget" name="mode1Table">
+         <property name="styleSheet">
+          <string notr="true">QTableWidget {
+    background-color: #111111;
+    color: #ffffff;
+    border: 1px solid #444444;
+    gridline-color: #333333;
+    font-size: 11pt;
+}
+QTableWidget::item {
+    padding: 8px;
+    border-bottom: 1px solid #333333;
+}
+QTableWidget::item:selected {
+    background-color: #2a2a2a;
+}
+QHeaderView::section {
+    background-color: #222222;
+    color: #ffffff;
+    padding: 10px;
+    font-weight: bold;
+    border: 1px solid #333333;
+    font-size: 12pt;
+}
+QTableWidget QTableCornerButton::section {
+    background-color: #222222;
+    border: 1px solid #333333;
+}</string>
+         </property>
+         <column>
+          <property name="text">
+           <string>排名</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>用户名</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>分数</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>时间</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="mode2Tab">
+      <attribute name="title">
+       <string>旋风模式</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QTableWidget" name="mode2Table">
+         <property name="styleSheet">
+          <string notr="true">QTableWidget {
+    background-color: #111111;
+    color: #ffffff;
+    border: 1px solid #444444;
+    gridline-color: #333333;
+    font-size: 11pt;
+}
+QTableWidget::item {
+    padding: 8px;
+    border-bottom: 1px solid #333333;
+}
+QTableWidget::item:selected {
+    background-color: #2a2a2a;
+}
+QHeaderView::section {
+    background-color: #222222;
+    color: #ffffff;
+    padding: 10px;
+    font-weight: bold;
+    border: 1px solid #333333;
+    font-size: 12pt;
+}
+QTableWidget QTableCornerButton::section {
+    background-color: #222222;
+    border: 1px solid #333333;
+}</string>
+         </property>
+         <column>
+          <property name="text">
+           <string>排名</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>用户名</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>分数</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>时间</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="mode3Tab">
+      <attribute name="title">
+       <string>霓虹模式</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <widget class="QTableWidget" name="mode3Table">
+         <property name="styleSheet">
+          <string notr="true">QTableWidget {
+    background-color: #111111;
+    color: #ffffff;
+    border: 1px solid #444444;
+    gridline-color: #333333;
+    font-size: 11pt;
+}
+QTableWidget::item {
+    padding: 8px;
+    border-bottom: 1px solid #333333;
+}
+QTableWidget::item:selected {
+    background-color: #2a2a2a;
+}
+QHeaderView::section {
+    background-color: #222222;
+    color: #ffffff;
+    padding: 10px;
+    font-weight: bold;
+    border: 1px solid #333333;
+    font-size: 12pt;
+}
+QTableWidget QTableCornerButton::section {
+    background-color: #222222;
+    border: 1px solid #333333;
+}</string>
+         </property>
+         <column>
+          <property name="text">
+           <string>排名</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>用户名</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>分数</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>时间</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="personalTab">
+      <attribute name="title">
+       <string>我的记录</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_5">
+       <item>
+        <widget class="QTableWidget" name="personalTable">
+         <property name="styleSheet">
+          <string notr="true">QTableWidget {
+    background-color: #111111;
+    color: #ffffff;
+    border: 1px solid #444444;
+    gridline-color: #333333;
+    font-size: 11pt;
+}
+QTableWidget::item {
+    padding: 8px;
+    border-bottom: 1px solid #333333;
+}
+QTableWidget::item:selected {
+    background-color: #2a2a2a;
+}
+QHeaderView::section {
+    background-color: #222222;
+    color: #ffffff;
+    padding: 10px;
+    font-weight: bold;
+    border: 1px solid #333333;
+    font-size: 12pt;
+}
+QTableWidget QTableCornerButton::section {
+    background-color: #222222;
+    border: 1px solid #333333;
+}</string>
+         </property>
+         <column>
+          <property name="text">
+           <string>用户名</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>分数</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>模式</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>时间</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="backButton">
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background-color: #333333;
+    color: #ffffff;
+    border: 1px solid #555555;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font: bold 14pt 'Microsoft YaHei';
+}
+QPushButton:hover {
+    background-color: #444444;
+    border-color: #666666;
+}
+QPushButton:pressed {
+    background-color: #222222;
+    padding-top: 13px;
+    padding-left: 25px;
+}</string>
+     </property>
+     <property name="text">
+      <string>返回主菜单</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Menu</class>
+ <widget class="QWidget" name="Menu">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>659</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>主菜单</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget#Menu{
+        background-color: rgba(0,0,0,170);
+        border:1px solid #ff9de0;
+}</string>
+  </property>
+  <layout class="QHBoxLayout" name="mainLay">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QWidget" name="sideBar" native="true">
+     <property name="maximumSize">
+      <size>
+       <width>160</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#sideBar{background:#111;border-right:2px solid #ff9de0;}</string>
+     </property>
+     <layout class="QVBoxLayout" name="sideLay">
+      <property name="spacing">
+       <number>12</number>
+      </property>
+      <property name="leftMargin">
+       <number>16</number>
+      </property>
+      <property name="topMargin">
+       <number>40</number>
+      </property>
+      <property name="rightMargin">
+       <number>16</number>
+      </property>
+      <property name="bottomMargin">
+       <number>40</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="btnSingle">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+QPushButton{
+    color:#fff;
+    font:15px;
+    text-align:left;
+    padding-left:12px;
+    border:none;
+    border-radius:8px;
+    background:qlineargradient(x1:0,y1:0,x2:1,y2:0, stop:0 #ff9de0, stop:1 transparent);
+}
+QPushButton:hover{background:qlineargradient(x1:0,y1:0,x2:1,y2:0, stop:0 #ff6bcb, stop:1 transparent);}
+QPushButton:checked{background:qlineargradient(x1:0,y1:0,x2:1,y2:0, stop:0 #ff4fa5, stop:1 transparent);}
+         </string>
+        </property>
+        <property name="text">
+         <string>  单机游戏</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnOnline">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+QPushButton{
+    color:#fff;
+    font:15px;
+    text-align:left;
+    padding-left:12px;
+    border:none;
+    border-radius:8px;
+    background:qlineargradient(x1:0,y1:0,x2:1,y2:0, stop:0 #9de0ff, stop:1 transparent);
+}
+QPushButton:hover{background:qlineargradient(x1:0,y1:0,x2:1,y2:0, stop:0 #6bcbff, stop:1 transparent);}
+QPushButton:checked{background:qlineargradient(x1:0,y1:0,x2:1,y2:0, stop:0 #4fa5ff, stop:1 transparent);}
+         </string>
+        </property>
+        <property name="text">
+         <string>  联机对战</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnSkill">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+QPushButton{
+    color:#fff;
+    font:15px;
+    text-align:left;
+    padding-left:12px;
+    border:none;
+        border-radius:8px;
+    background:qlineargradient(x1:0,y1:0,x2:1,y2:0, stop:0 #fff59d, stop:1 transparent);
+}
+QPushButton:hover{background:qlineargradient(x1:0,y1:0,x2:1,y2:0, stop:0 #fdd835, stop:1 transparent);}
+QPushButton:checked{background:qlineargradient(x1:0,y1:0,x2:1,y2:0, stop:0 #fbc02d, stop:1 transparent);}
+         </string>
+        </property>
+        <property name="text">
+         <string>  技能选择</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnRank">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+QPushButton{
+    color:#fff;
+    font:15px;
+    text-align:left;
+    padding-left:12px;
+    border:none;
+    border-radius:8px;
+    background:qlineargradient(x1:0,y1:0,x2:1,y2:0, stop:0 #b39ddb, stop:1 transparent);
+}
+QPushButton:hover{background:qlineargradient(x1:0,y1:0,x2:1,y2:0, stop:0 #9575cd, stop:1 transparent);}
+QPushButton:checked{background:qlineargradient(x1:0,y1:0,x2:1,y2:0, stop:0 #7e57c2, stop:1 transparent);}
+         </string>
+        </property>
+        <property name="text">
+         <string>  排行榜</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnRule">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+QPushButton{
+    color:#fff;
+    font:15px;
+    text-align:left;
+    padding-left:12px;
+    border:none;
+    border-radius:8px;
+    background:qlineargradient(x1:0,y1:0,x2:1,y2:0, stop:0 #ffab91, stop:1 transparent);
+}
+QPushButton:hover{background:qlineargradient(x1:0,y1:0,x2:1,y2:0, stop:0 #ff7043, stop:1 transparent);}
+QPushButton:checked{background:qlineargradient(x1:0,y1:0,x2:1,y2:0, stop:0 #ff5722, stop:1 transparent);}
+         </string>
+        </property>
+        <property name="text">
+         <string>  规则</string>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="sideSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>0</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnSettings">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{color:#aaa;font:13px;border:none;border-radius:6px;}
+QPushButton:hover{color:#fff;background:rgba(255,255,255,30);}</string>
+        </property>
+        <property name="text">
+         <string>设置</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QStackedWidget" name="stackRight">
+     <property name="styleSheet">
+      <string notr="true">#stackRight{background:#222;border:1px solid #ff9de0;border-radius:12px;}</string>
+     </property>
+     <widget class="QWidget" name="pageWelcome">
+      <layout class="QVBoxLayout" name="welcomeLay">
+       <item>
+        <spacer name="welcomeTopSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>80</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="labelWelcome">
+         <property name="styleSheet">
+          <string notr="true">color:#ff9de0;font:700 36pt &quot;Microsoft YaHei&quot;;</string>
+         </property>
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;消消乐&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="labelSub">
+         <property name="styleSheet">
+          <string notr="true">color:#aaa;font:16pt &quot;Microsoft YaHei&quot;;</string>
+         </property>
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;选择左侧功能，开始游戏吧！&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="welcomeBottomSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>80</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

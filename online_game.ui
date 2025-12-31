@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>OnlineGame</class>
+ <widget class="QWidget" name="OnlineGame">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>720</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1000</width>
+    <height>720</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>联机对战 - 闪电模式</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(0, 0, 0);</string>
+  </property>
+
+  <!-- 顶部状态栏 -->
+  <widget class="QWidget" name="topBar" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1000</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:#111;border-bottom:2px solid #ff9de0;</string>
+   </property>
+   <layout class="QHBoxLayout" name="topLayout">
+    <property name="spacing">
+     <number>20</number>
+    </property>
+    <property name="leftMargin">
+     <number>20</number>
+    </property>
+    <property name="rightMargin">
+     <number>20</number>
+    </property>
+
+    <!-- 我的信息 -->
+    <item>
+     <widget class="QLabel" name="labelMyInfo">
+      <property name="minimumSize">
+       <size>
+        <width>180</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>240</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+        color:#00e5ff;
+        font:bold 14pt 'Microsoft YaHei';
+        background:rgba(0, 229, 255, 0.1);
+        border:2px solid #00e5ff;
+        border-radius:10px;
+        padding:5px 10px;
+       </string>
+      </property>
+      <property name="text">
+       <string>99 分数: 0</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+
+    <item>
+     <spacer name="topSpacer1">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+
+    <!-- 倒计时 -->
+    <item>
+     <widget class="QLabel" name="labelCountdown">
+      <property name="minimumSize">
+       <size>
+        <width>140</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+        color:#ff9de0;
+        font:bold 28pt 'Microsoft YaHei';
+        background:rgba(255, 157, 224, 0.1);
+        border:2px solid #ff9de0;
+        border-radius:10px;
+        padding:5px;
+       </string>
+      </property>
+      <property name="text">
+       <string>02:56</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+
+    <item>
+     <spacer name="topSpacer2">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+
+    <!-- 对手信息 -->
+    <item>
+     <widget class="QLabel" name="labelOpponentInfo">
+      <property name="minimumSize">
+       <size>
+        <width>180</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>240</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+        color:#ff5555;
+        font:bold 14pt 'Microsoft YaHei';
+        background:rgba(255, 85, 85, 0.1);
+        border:2px solid #ff5555;
+        border-radius:10px;
+        padding:5px 10px;
+       </string>
+      </property>
+      <property name="text">
+       <string>aa 分数: 0</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+
+   </layout>
+  </widget>
+
+  <!-- 主体游戏区域 -->
+  <widget class="QWidget" name="gameArea" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>80</y>
+     <width>1000</width>
+     <height>560</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:#111;</string>
+   </property>
+   <layout class="QHBoxLayout" name="gameLayout">
+    <property name="spacing">
+     <number>40</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+
+    <!-- 左侧占位空间 -->
+    <item>
+     <spacer name="leftSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+
+    <!-- 我的棋盘区域 -->
+    <item>
+     <widget class="QWidget" name="myBoardArea" native="true">
+      <property name="minimumSize">
+       <size>
+        <width>450</width>
+        <height>540</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>450</width>
+        <height>540</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:transparent;</string>
+      </property>
+      <layout class="QVBoxLayout" name="myLayout">
+       <property name="spacing">
+        <number>10</number>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignHCenter</set>
+       </property>
+
+       <!-- 我的棋盘标题 -->
+       <item>
+        <widget class="QLabel" name="labelMyBoard">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>35</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">
+           color:#00e5ff;
+           font:bold 18pt 'Microsoft YaHei';
+           qproperty-alignment: AlignCenter;
+          </string>
+         </property>
+         <property name="text">
+          <string>我的棋盘</string>
+         </property>
+        </widget>
+       </item>
+
+       <!-- 我的棋盘容器 -->
+       <item>
+        <widget class="QWidget" name="myBoardContainer" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>400</width>
+           <height>400</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>400</width>
+           <height>400</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">
+           background:#162640;
+           border:2px solid #00e5ff;
+           border-radius:12px;
+          </string>
+         </property>
+        </widget>
+       </item>
+
+       <!-- 我的操作按钮 -->
+       <item>
+        <widget class="QWidget" name="myControls" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>80</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background:transparent;</string>
+         </property>
+         <layout class="QHBoxLayout" name="myControlsLayout">
+          <property name="spacing">
+           <number>20</number>
+          </property>
+
+          <item>
+           <spacer name="myLeftSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+
+          <item>
+           <widget class="QPushButton" name="btnMyUndo">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>45</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
+QPushButton {
+ color:#fff;
+ font:bold 14pt 'Microsoft YaHei';
+ border:2px solid #00e5ff;
+ border-radius:10px;
+ background:rgba(0, 229, 255, 0.2);
+ padding:8px;
+}
+QPushButton:hover {
+ background:rgba(0, 229, 255, 0.4);
+ border-color:#fff;
+}
+QPushButton:pressed {
+ background:rgba(0, 229, 255, 0.6);
+}
+             </string>
+            </property>
+            <property name="text">
+             <string>撤步</string>
+            </property>
+           </widget>
+          </item>
+
+          <item>
+           <widget class="QPushButton" name="btnMySkill">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>45</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
+QPushButton {
+ color:#fff;
+ font:bold 14pt 'Microsoft YaHei';
+ border:2px solid #b388ff;
+ border-radius:10px;
+ background:rgba(179, 136, 255, 0.2);
+ padding:8px;
+}
+QPushButton:hover {
+ background:rgba(179, 136, 255, 0.4);
+ border-color:#fff;
+}
+QPushButton:pressed {
+ background:rgba(179, 136, 255, 0.6);
+}
+             </string>
+            </property>
+            <property name="text">
+             <string>技能</string>
+            </property>
+           </widget>
+          </item>
+
+          <item>
+           <spacer name="myRightSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+
+         </layout>
+        </widget>
+       </item>
+
+      </layout>
+     </widget>
+    </item>
+
+    <!-- 中间占位空间 -->
+    <item>
+     <spacer name="centerSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+
+    <!-- 对手棋盘区域 -->
+    <item>
+     <widget class="QWidget" name="opponentBoardArea" native="true">
+      <property name="minimumSize">
+       <size>
+        <width>450</width>
+        <height>540</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>450</width>
+        <height>540</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:transparent;</string>
+      </property>
+      <layout class="QVBoxLayout" name="opponentLayout">
+       <property name="spacing">
+        <number>10</number>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignHCenter</set>
+       </property>
+
+       <!-- 对手棋盘标题 -->
+       <item>
+        <widget class="QLabel" name="labelOpponentBoard">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>35</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">
+           color:#ff5555;
+           font:bold 18pt 'Microsoft YaHei';
+           qproperty-alignment: AlignCenter;
+          </string>
+         </property>
+         <property name="text">
+          <string>对手棋盘</string>
+         </property>
+        </widget>
+       </item>
+
+       <!-- 对手棋盘容器 -->
+       <item>
+        <widget class="QWidget" name="opponentBoardContainer" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>400</width>
+           <height>400</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>400</width>
+           <height>400</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">
+           background:#162640;
+           border:2px solid #ff5555;
+           border-radius:12px;
+          </string>
+         </property>
+        </widget>
+       </item>
+
+       <!-- 对手状态显示 -->
+       <item>
+        <widget class="QLabel" name="labelOpponentStatus">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>80</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">
+           color:#aaa;
+           font:14pt 'Microsoft YaHei';
+           qproperty-alignment: AlignCenter;
+          </string>
+         </property>
+         <property name="text">
+          <string>等待对手...</string>
+         </property>
+        </widget>
+       </item>
+
+      </layout>
+     </widget>
+    </item>
+
+    <!-- 右侧占位空间 -->
+    <item>
+     <spacer name="rightSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+
+   </layout>
+  </widget>
+
+  <!-- 底部控制栏 -->
+  <widget class="QWidget" name="bottomBar" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>640</y>
+     <width>1000</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+     background:#111;
+     border-top:2px solid #ff9de0;
+    </string>
+   </property>
+   <layout class="QHBoxLayout" name="bottomLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+
+    <item>
+     <spacer name="bottomLeftSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>200</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+
+    <!-- 返回按钮 -->
+    <item>
+     <widget class="QPushButton" name="btnBack">
+      <property name="minimumSize">
+       <size>
+        <width>150</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QPushButton {
+ color:#fff;
+ font:bold 16pt 'Microsoft YaHei';
+ border:none;
+ border-radius:10px;
+ background:qlineargradient(x1:0,y1:0,x2:1,y2:0, stop:0 #ff9de0, stop:1 #ff6bcb);
+ padding:10px;
+}
+QPushButton:hover {
+ background:qlineargradient(x1:0,y1:0,x2:1,y2:0, stop:0 #ff6bcb, stop:1 #ff4fa5);
+}
+QPushButton:pressed {
+ background:qlineargradient(x1:0,y1:0,x2:1,y2:0, stop:0 #ff4fa5, stop:1 #e0438c);
+}
+       </string>
+      </property>
+      <property name="text">
+       <string>返回</string>
+      </property>
+     </widget>
+    </item>
+
+    <item>
+     <spacer name="bottomRightSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>200</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+
+   </layout>
+  </widget>
+
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
